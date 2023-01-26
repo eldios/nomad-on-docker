@@ -78,6 +78,19 @@ Traefik server respectively.
 
 These are just meant to be examples but are beyond the scope of this tutorial.
 
+If you want to test out the example I provided, you can start the cluster from 
+scratch by using the following command:
+```
+make full-up
+```
+This will take care of setting up the Nomad cluster in Docker and immediately
+add the example application via Terraform inside the created Nomad cluster.
+
+If the cluster is already up and running, you can just run:
+```
+make tf-up
+```
+
 ## 🧹 Clean up
 To remove the Nomad cluster, run the following command:
 

@@ -1,7 +1,8 @@
 # Nomad on Docker .. plus some good stuff
 
-![LOGO](https://github.com/eldios/nomad-on-docker/raw/main/assets/logo.jpg)
-
+<p align="center">
+  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/logo.jpg?raw=true" alt="Nomad on Docker logo"/>
+</p>
 
 ## Intro
 

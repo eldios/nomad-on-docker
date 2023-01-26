@@ -54,8 +54,7 @@ git clone https://github.com/eldios/nomad-on-docker.git
 ```
 cd nomad-on-docker && make
 ```
-3. ✅ Done! ✅
-  You should now have a Nomad cluster up and running in Docker!
+3. ✅ Done! ✅ You should now have a Nomad cluster up and running in Docker!
 
 ## 🤠 Usage
 

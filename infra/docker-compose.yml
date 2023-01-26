@@ -1,0 +1,36 @@
+version: '3.9'
+
+services:
+  nomad:
+    build: .
+    privileged: true
+    network_mode: "host"
+    image: eldios/nomad
+    command:
+      - agent
+      - -server
+      - -client
+      - -bootstrap-expect=1
+      - -log-level=info
+      - -data-dir=/data
+    volumes:
+      - type: bind
+        source: /sys/fs/cgroup
+        target: /sys/fs/cgroup
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
+      - type: volume
+        source: nomad-data
+        target: /data
+    deploy:
+      resources:
+        limits:
+          cpus   : '2'
+          memory : '1G'
+        reservations:
+          cpus   : '1'
+          memory : '128M'
+
+volumes:
+  nomad-data:

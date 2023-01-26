@@ -3,14 +3,14 @@ DOCKER_INFRA_DIR="${DOCKER_DIR}/infra"
 DOCKER_TF_DIR="${DOCKER_DIR}/app"
 
 SLEEP_TIME?=15
-NOMAD_ADDR?=$$(ip route | awk '/default/ {print $$9}')
+NOMAD_ADDR?="http://$$(ip route | awk '/default/ {print $$9}'):4646"
 
 # standard targets
 all: up
-up: infra-up sleep tf-up
+up: docker-up sleep tf-up
 
 clean: down
-down: tf-down infra-down
+down: tf-down docker-down
 
 # utility targets
 
@@ -36,6 +36,6 @@ tf-up:
 	cd ${DOCKER_TF_DIR} && terraform init && NOMAD_ADDR=${NOMAD_ADDR} terraform apply -auto-approve
 
 tf-down:
-	cd ${DOCKER_TF_DIR} && terraform NOMAD_ADDR=${NOMAD_ADDR} destroy -auto-approve
+	cd ${DOCKER_TF_DIR} && NOMAD_ADDR=${NOMAD_ADDR} terraform destroy -auto-approve
 
 .PHONY: all clean up down addr sleep docker docker-* tf tf-*

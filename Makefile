@@ -24,15 +24,15 @@ addr::
 
 # default aliases
 all:   up
-up:    docker-up
+up:    docker-up output
 clean: down
 down:  docker-down
 
 output:
 	@echo "Nomad should be listening on ${NOMAD_ADDR}"
 
-full:      docker-up sleep tf-up
-full-up:   docker-up sleep tf-up
-full-down: tf-down docker-down
+full:      full-up
+full-up:   docker-up sleep tf-up output
+full-down: tf-down sleep docker-down
 
 .PHONY: all up clean down full full-* output sleep addr

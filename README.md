@@ -15,9 +15,10 @@
 - [Clean up](#-clean-up)
 - [Build image locally](#-build-image-locally)
 
+
 ## 🧾 Intro
 
-Do you want to run Hashicorp Nomad on Docker via Compose? Look no further! 
+Do you want to run [Hashicorp Nomad](https://github.com/hashicorp/nomad) on [Docker](https://www.docker.com/) via [Compose](https://docs.docker.com/compose/)? Look no further! 
 
 This repo provides a comprehensive set of instructions to get you up and running quickly.
 
@@ -27,7 +28,7 @@ Plus, you can now add some humor to your deployments with our amazing cyberpunk-
 
 ***Happy Nomading!***
 
-(*): thanks to DeepAI for the nice image! <3
+(*): thanks to [DeepAI](https://deepai.org/) for the nice image! <3
 
 ## 🔌 Requirements
 
@@ -35,13 +36,13 @@ The whole workflow revolves around a few tools, which are also the basic
 requirements for running this lab.
 
 ### Minimum
-* Docker running on a Linux system
-* Docker Compose (either via `docker-compose` or `docker compose`)
+* [Docker](https://www.docker.com/) running on a Linux system
+* [Docker Compose](https://docs.docker.com/compose/) (either via `docker-compose` or `docker compose`)
 * working Internet connectvity (to download the Docker images)
 
 ### Suggested
-* Make
-* Terraform (for the usage examples in the `tf` directory)
+* [Make](https://www.gnu.org/software/make/)
+* [Terraform](https://github.com/hashicorp/terraform) (for the usage examples in the `tf` directory)
 
 ## 📥 Installation
 Using this repo is as simple as following the 3 steps below:
@@ -67,11 +68,11 @@ Once you have your Nomad cluster running, you can use it to deploy applications,
 
 To give you some ideas, I added a quick example in the `tf` directory.
 
-The example will install a Caddy web server and a Traefik Reverse Proxy that
+The example will install a [Caddy](https://github.com/caddyserver/caddy) web server and a [Traefik](https://github.com/traefik/traefik) Reverse Proxy that
 will work as the cluster Ingress.
 
-The Terraform file is pretty easy as it just invokes the Nomad provider and then
-sources both the Nomad job files.
+The Terraform file is pretty easy as it just invokes the [Terraform Nomad provider](https://registry.terraform.io/providers/hashicorp/nomad/latest/docs) 
+and then sources both the Nomad job files.
 
 The two Nomad files are `app.hcl` for the Caddy server and `ingress.hcl` for the
 Traefik server respectively.

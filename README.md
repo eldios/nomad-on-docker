@@ -57,6 +57,10 @@ cd nomad-on-docker && make
 ```
 3. ✅ Done! ✅ You should now have a Nomad cluster up and running in Docker!
 
+Wait a second .. your cluster is working but empty and super lonely! 💔
+
+If you want to make use of it and make super happy, proceed to the next paragraph!
+
 ## 🤠 Usage
 
 Once you have your Nomad cluster running, you can use it to deploy applications, manage workloads, and more. Here are some examples of what you can do:

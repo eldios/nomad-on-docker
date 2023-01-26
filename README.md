@@ -57,6 +57,10 @@ cd nomad-on-docker && make
 ```
 3. ✅ Done! ✅ You should now have a Nomad cluster up and running in Docker!
 
+<p align="center">
+  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/empty_sad_cluster.jpg?raw=true" alt="Picture of an empty Nomad on Docker with a sadge icon"/>
+</p>
+
 Wait a second .. your cluster is working but empty and super lonely! 💔
 
 If you want to make use of it and make super happy, proceed to the next paragraph!
@@ -95,6 +99,10 @@ If the cluster is already up and running, you can just run:
 ```
 make tf-up
 ```
+
+<p align="center">
+  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/functional_happy_cluster.jpg?raw=true" alt="Picture of an functional Nomad on Docker with an happy icon"/>
+</p>
 
 ## 🧹 Clean up
 To remove the Nomad cluster, run the following command:

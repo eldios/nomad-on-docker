@@ -23,11 +23,14 @@ Plus, you can now add some humor to your deployments with our amazing cyberpunk-
 The whole workflow revolves around a few tools, which are also the basic
 requirements for running this lab.
 
+### Minimum
 * Docker running on a Linux system
 * Docker Compose (either via `docker-compose` or `docker compose`)
-* Terraform
-* Make
 * working Internet connectvity (to download the Docker images)
+
+## Suggested
+* Make
+* Terraform (for the usage examples in the `tf` directory)
 
 ## 📥 Installation
 Using this repo is as simple as following the 3 steps below:
@@ -51,7 +54,15 @@ Once you have your Nomad cluster running, you can use it to deploy applications,
 - Run tests and PoCs
 - Get to know how Nomad works
 
-TODO: Add EXAMPLES
+To give you some ideas, I added a quick example in the `tf` directory.
+The example will install a Caddy web server and a Traefik Reverse Proxy that
+will work as the cluster Ingress.
+The Terraform file is pretty easy as it just invokes the Nomad provider and then
+sources both the Nomad job files.
+The two Nomad files are `app.hcl` for the Caddy server and `ingress.hcl` for the
+Traefik server respectively.
+
+These are just meant to be examples but are beyond the scope of this tutorial.
 
 ## 🧹 Clean up
 To remove the Nomad cluster, run the following command:

@@ -20,7 +20,6 @@ endif
 
 docker-up:
 	cd ${DOCKER_DIR} && ${DOCKER_COMPOSE} up -d
-	@echo "You should now be able to connect to Nomad at ${NOMAD_ADDR}"
 
 docker-down:
 	cd ${DOCKER_DIR} && ${DOCKER_COMPOSE} down -v

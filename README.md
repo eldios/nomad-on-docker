@@ -101,7 +101,7 @@ make tf-up
 ```
 
 <p align="center">
-  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/functional_happy_cluster.jpg?raw=true" alt="Picture of an functional Nomad on Docker with an happy icon"/>
+  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/functional_happy_cluster.png?raw=true" alt="Picture of an functional Nomad on Docker with an happy icon"/>
 </p>
 
 ## 🧹 Clean up

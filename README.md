@@ -33,10 +33,14 @@ requirements for running this lab.
 Using this repo is as simple as following the 3 steps below:
 
 1. Clone this repo via Git. Usually:
-  `git clone https://github.com/eldios/nomad-on-docker.git`
+```
+git clone https://github.com/eldios/nomad-on-docker.git
+```
 2. cd into the directory and run Make:
-  `cd nomad-on-docker && make`
-3. Done! You should now have a Nomad cluster up and running in Docker!
+```
+cd nomad-on-docker && make
+```
+3. ✅ Done! ✅ You should now have a Nomad cluster up and running in Docker!
 
 ## 🤠 Usage
 

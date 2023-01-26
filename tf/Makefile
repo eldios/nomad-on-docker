@@ -1,14 +1,9 @@
 TF_DIR="$$(pwd)"
 
+
 ifndef NOMAD_ADDR
 NOMAD_ADDR?="http://$$(ip route | awk '/default/ {print $$9}'):4646"
 endif
-
-# utility targets
-
-addr::
-	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
-	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
 
 # Terraform implementation
 
@@ -19,5 +14,10 @@ tf-up:
 
 tf-down:
 	cd ${TF_DIR} && NOMAD_ADDR=${NOMAD_ADDR} terraform destroy -auto-approve
+
+# utility targets
+addr::
+	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
+	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
 
 .PHONY: addr tf tf-*

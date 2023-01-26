@@ -9,12 +9,6 @@ ifndef NOMAD_ADDR
 NOMAD_ADDR?="http://$$(ip route | awk '/default/ {print $$9}'):4646"
 endif
 
-# utility targets
-
-addr::
-	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
-	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
-
 # Docker implementation
 
 docker: docker-up
@@ -24,5 +18,11 @@ docker-up:
 
 docker-down:
 	cd ${DOCKER_DIR} &&  ${DOCKER_COMPOSE} down
+
+# utility targets
+
+addr::
+	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
+	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
 
 .PHONY: addr docker docker-*

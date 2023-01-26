@@ -39,6 +39,7 @@ requirements for running this lab.
 * [Docker](https://www.docker.com/) running on a Linux system
 * [Docker Compose](https://docs.docker.com/compose/) (either via `docker-compose` or `docker compose`)
 * working Internet connectvity (to download the Docker images)
+* about 400 MB free on disk for the repo + Docker images
 
 ### Suggested
 * [Make](https://www.gnu.org/software/make/)

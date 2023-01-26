@@ -61,3 +61,14 @@ make clean
 ```
 
 This will remove the Nomad cluster and all associated Docker containers.
+
+## 🔨 Building locally
+If preferred it's also entirely possible to build the Nomad Docker image locally by using the `Dockerfile` provider in the docker directory.
+
+To do so, just run:
+```
+cd docker
+docker build -t eldios/nomad .
+```
+
+If you decide to change the `tag` during the build process, remember to change the image name also in the `docker-compose.yml` file.

@@ -1,15 +1,16 @@
 DOCKER_DIR="$$(pwd)"
 DOCKER_INFRA_DIR="${DOCKER_DIR}/infra"
 DOCKER_TF_DIR="${DOCKER_DIR}/app"
+
 SLEEP_TIME?=15
 NOMAD_ADDR?=$$(ip route | awk '/default/ {print $$9}')
 
 # standard targets
 all: up
-up: docker-up
+up: infra-up sleep tf-up
 
 clean: down
-down: docker-down
+down: tf-down infra-down
 
 # utility targets
 
@@ -24,19 +25,17 @@ sleep:
 # DOCKER implementation
 
 docker: docker-up
-docker-up: docker-infra-up sleep docker-tf-up
-docker-down: docker-tf-down docker-infra-down
-
-docker-infra-up:
+docker-up:
 	cd ${DOCKER_INFRA_DIR} && docker-compose up -d
 
-docker-infra-down:
+docker-down:
 	cd ${DOCKER_INFRA_DIR} && docker-compose down
 
-docker-tf-up:
-	cd ${DOCKER_TF_DIR} && terraform init && terraform apply -auto-approve
+tf: tf-up
+tf-up:
+	cd ${DOCKER_TF_DIR} && terraform init && NOMAD_ADDR=${NOMAD_ADDR} terraform apply -auto-approve
 
-docker-tf-down:
-	cd ${DOCKER_TF_DIR} && terraform destroy -auto-approve
+tf-down:
+	cd ${DOCKER_TF_DIR} && terraform NOMAD_ADDR=${NOMAD_ADDR} destroy -auto-approve
 
-.PHONY: all clean up down addr sleep docker docker-*
+.PHONY: all clean up down addr sleep docker docker-* tf tf-*

@@ -49,7 +49,7 @@ job "ingress" {
         args = [
           "--providers.nomad=true",
           "--providers.nomad.exposedByDefault=false",
-          "--providers.nomad.endpoint.address=${NOMAD_ADDR}",
+          "--providers.nomad.endpoint.address=http://${NOMAD_HOST_IP_ingressAdmin}:4646",
           "--experimental.http3=true",
 
           "--api.dashboard=true",

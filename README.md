@@ -28,7 +28,7 @@ requirements for running this lab.
 * Docker Compose (either via `docker-compose` or `docker compose`)
 * working Internet connectvity (to download the Docker images)
 
-## Suggested
+### Suggested
 * Make
 * Terraform (for the usage examples in the `tf` directory)
 

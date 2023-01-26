@@ -13,7 +13,7 @@
 - [Installation](#-installation)
 - [Usage](#-usage)
 - [Clean up](#-clean-up)
-- [Build Docker locally](#-build-image-locally)
+- [Build image locally](#-build-image-locally)
 
 ## 🧾 Intro
 

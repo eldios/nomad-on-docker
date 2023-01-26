@@ -55,10 +55,13 @@ Once you have your Nomad cluster running, you can use it to deploy applications,
 - Get to know how Nomad works
 
 To give you some ideas, I added a quick example in the `tf` directory.
+
 The example will install a Caddy web server and a Traefik Reverse Proxy that
 will work as the cluster Ingress.
+
 The Terraform file is pretty easy as it just invokes the Nomad provider and then
 sources both the Nomad job files.
+
 The two Nomad files are `app.hcl` for the Caddy server and `ingress.hcl` for the
 Traefik server respectively.
 

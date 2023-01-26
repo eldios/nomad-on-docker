@@ -1,8 +1,19 @@
-# 🤖 Nomad on Docker .. plus some good stuff 🤖
-
 <p align="center">
   <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/logo.jpg?raw=true" alt="Nomad on Docker logo"/>
 </p>
+
+# 🤖 Nomad on Docker .. plus some good stuff 🤖
+
+<h3 align="center">Hashicorp Nomad on Docker</h3>
+
+### Menu
+
+- [Intro](#-intro)
+- [Requirements](#-requirements)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Clean up](#-clean-up)
+- [Build Docker locally](#-build-image-locally)
 
 ## 🧾 Intro
 
@@ -76,10 +87,12 @@ make clean
 
 This will remove the Nomad cluster and all associated Docker containers.
 
-## 🔨 Building locally
-If preferred it's also entirely possible to build the Nomad Docker image locally by using the `Dockerfile` provider in the docker directory.
+## 🔨 Building image locally
+If preferred it's also entirely possible to ***build the Docker image locally*** by using the `Dockerfile` provider in the docker directory.
 
-To do so, just run:
+This approach would also make it possible to customise the Docker container Nomad image, if needed.
+
+To build the container locally, just run:
 ```
 cd docker
 docker build -t eldios/nomad .

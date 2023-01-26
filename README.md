@@ -1,5 +1,8 @@
 # Nomad on Docker .. plus some good stuff
 
+![LOGO](https://github.com/eldios/nomad-on-docker/raw/main/assets/logo.jpg)
+
+
 ## Intro
 
 This repo contains a basic implementation of Nomad running in Docker.

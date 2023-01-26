@@ -2,7 +2,6 @@ version: '3.9'
 
 services:
   nomad:
-    build: .
     privileged: true
     network_mode: "host"
     image: eldios/nomad

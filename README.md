@@ -58,7 +58,7 @@ cd nomad-on-docker && make
 3. ✅ Done! ✅ You should now have a Nomad cluster up and running in Docker!
 
 <p align="center">
-  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/empty_sad_cluster.jpg?raw=true" alt="Picture of an empty Nomad on Docker with a sadge icon"/>
+  <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/empty_sad_cluster.png?raw=true" alt="Picture of an empty Nomad on Docker with a sadge icon"/>
 </p>
 
 Wait a second .. your cluster is working but empty and super lonely! 💔

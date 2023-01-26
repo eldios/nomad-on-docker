@@ -87,8 +87,8 @@ make clean
 
 This will remove the Nomad cluster and all associated Docker containers.
 
-## 🔨 Building image locally
-If preferred it's also entirely possible to ***build the Docker image locally*** by using the `Dockerfile` provider in the docker directory.
+## 🔨 Build image locally
+If preferred it's also entirely possible to ***build the Docker image locally*** by using the `Dockerfile` provided in the `docker` directory.
 
 This approach would also make it possible to customise the Docker container Nomad image, if needed.
 

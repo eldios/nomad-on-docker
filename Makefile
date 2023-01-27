@@ -15,16 +15,19 @@ SLEEP_TIME?=15
 endif
 
 ifndef NOMAD_ADDR
-NOMAD_ADDR?="http://$$(ip route | awk '/default/ {print $$9}'):4646"
+IPv4_ADDR?="$$(ip route | awk '/default/ {print $$9}')"
+NOMAD_ADDR?="http://${IPv4_ADDR}:4646"
+INGRESS_ADDR?="http://${IPv4_ADDR}"
+TRAEFIK_ADMIN_ADDR?="http://${IPv4_ADDR}:8080"
 endif
 
 # default aliases
 
-up:    docker-up sleep output
+up:    docker-up sleep docker-output
 
 clean: down
 
-down:  docker-down
+down:  tf-down sleep docker-down
 
 # full workflow aliases
 
@@ -43,7 +46,13 @@ addr::
 	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
 	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
 
-output:
-	@echo "Nomad should be ready and listening on ${NOMAD_ADDR}"
+docker-output:
+	@echo "Nomad Dashboard   should be listening on ${NOMAD_ADDR}"
 
-.PHONY: sleep addr output up clean down full full-up full-down
+output: full-output
+full-output:
+	@echo "Nomad Dashboard   should be listening on ${NOMAD_ADDR}"
+	@echo "Traefik Ingress   should be listening on ${INGRESS_ADDR}"
+	@echo "Traefik Dashboard should be listening on ${TRAEFIK_ADMIN_ADDR}"
+
+.PHONY: sleep addr output full-output docker-output up clean down full full-up full-down

@@ -9,6 +9,7 @@
 ### Menu
 
 - [Intro](#-intro)
+- [YouTube Video](#-youtube-video)
 - [Requirements](#-requirements)
 - [Installation](#-installation)
 - [Usage](#-usage)
@@ -29,6 +30,10 @@ Plus, you can now add some humor to your deployments with our amazing cyberpunk-
 ***Happy Nomading!***
 
 (*): thanks to [DeepAI](https://deepai.org/) for the nice image! <3
+
+## 🎥 YouTube Video
+
+This repo is the code companion to [my YouTube video](https://youtu.be/2-ibvcm3uzA) that you can find [HERE](https://youtu.be/2-ibvcm3uzA)
 
 ## 🔌 Requirements
 

@@ -14,12 +14,13 @@ ifndef SLEEP_TIME
 SLEEP_TIME?=15
 endif
 
-ifndef NOMAD_ADDR
-IPv4_ADDR?="$$(ip route | awk '/default/ {print $$9}')"
-NOMAD_ADDR?="http://${IPv4_ADDR}:4646"
-INGRESS_ADDR?="http://${IPv4_ADDR}"
-TRAEFIK_ADMIN_ADDR?="http://${IPv4_ADDR}:8080"
+ifndef HOST_ADDR
+HOST_ADDR?="$$(ip route | awk '/default/ {print $$9}')"
 endif
+
+NOMAD_ADDR?="http://${HOST_ADDR}:4646"
+INGRESS_ADDR?="http://${HOST_ADDR}"
+TRAEFIK_ADMIN_ADDR?="http://${HOST_ADDR}:8080"
 
 # default aliases
 

@@ -12,10 +12,6 @@ ifeq ("not found", "${DOCKER_COMPOSE}")
   $(error `docker-compose` or `docker compose` not found)
 endif
 
-ifndef NOMAD_ADDR
-NOMAD_ADDR?="http://$$(ip route | awk '/default/ {print $$9}'):4646"
-endif
-
 # Docker targets
 
 docker-up:
@@ -24,10 +20,4 @@ docker-up:
 docker-down:
 	cd ${DOCKER_DIR} && ${DOCKER_COMPOSE} down -v
 
-# utility targets
-
-addr::
-	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
-	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
-
-.PHONY: docker-up docker-down addr
+.PHONY: docker-up docker-down

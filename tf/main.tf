@@ -1,7 +1,4 @@
-provider "nomad" {
-  # set Nomad API entrypoint here or via NOMAD_ADDR env variable
-  # address = "http://__CHANGEME__:4646" # NOMAD_ADDR
-}
+provider "nomad" { }
 
 resource "nomad_job" "app" {
   jobspec = file("${path.module}/app.hcl")

@@ -8,9 +8,11 @@ tf:     tf-up
 
 TF_DIR="$$(pwd)"
 
-ifndef NOMAD_ADDR
-NOMAD_ADDR?="http://$$(ip route | awk '/default/ {print $$9}'):4646"
+ifndef HOST_ADDR
+HOST_ADDR?="$$(ip route | awk '/default/ {print $$9}')"
 endif
+
+NOMAD_ADDR?="http://${HOST_ADDR}:4646"
 
 # Terraform targets
 
@@ -25,6 +27,6 @@ tf-down:
 
 addr::
 	@echo "Auto-detected Nomad IPv4 Addr: ${NOMAD_ADDR}"
-	@echo "If wrong, please provide the correct one via NOMAD_ADDR env variable"
+	@echo "If wrong, please provide the correct IPv4 one via HOST_ADDR env variable"
 
 .PHONY: tf tf-up tf-down addr

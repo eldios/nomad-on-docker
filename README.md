@@ -42,6 +42,7 @@ requirements for running this lab.
 * about 400 MB free on disk for the repo + Docker images
 
 ### Suggested
+* [Git](https://git-scm.com/) .. to clone this repo .. unless you want to download it as a zip ;)
 * [Make](https://www.gnu.org/software/make/)
 * [Terraform](https://github.com/hashicorp/terraform) (for the usage examples in the `tf` directory)
 

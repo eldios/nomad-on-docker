@@ -89,17 +89,19 @@ Traefik server respectively.
 
 These are just meant to be examples but are beyond the scope of this tutorial.
 
-If you want to test out the example I provided, you can start the cluster from 
-scratch by using the following command:
-```
-make full-up
-```
+### ♻️ IF YOUR NOMAD CLUSTER IS UP ALREADY
 This will take care of setting up the Nomad cluster in Docker and immediately
 add the example application via Terraform inside the created Nomad cluster.
 
 If the cluster is already up and running, you can just run:
 ```
 make tf-up
+```
+### 🎉 IF YOU PREFER AN ALL-IN-ONE SETUP COMMAND
+If you prefer you can start the cluster from scratch AND add the web app 
+via Terraform ALL IN ONE COMMAND by using the following code:
+```
+make full-up
 ```
 
 <p align="center">

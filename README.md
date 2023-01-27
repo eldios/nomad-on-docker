@@ -59,6 +59,7 @@ cd nomad-on-docker && make
 ```
 3. ✅ Done! ✅ You should now have a Nomad cluster up and running in Docker!
 
+### 🎉 DONE ... 🦉 O'RLY? 🎉
 <p align="center">
   <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/empty_sad_cluster.png?raw=true" alt="Picture of an empty Nomad on Docker with a sadge icon"/>
 </p>
@@ -97,13 +98,14 @@ If the cluster is already up and running, you can just run:
 ```
 make tf-up
 ```
-### 🎉 IF YOU PREFER AN ALL-IN-ONE SETUP COMMAND
+### 😎 IF YOU PREFER AN ALL-IN-ONE SETUP COMMAND
 If you prefer you can start the cluster from scratch AND add the web app 
 via Terraform ALL IN ONE COMMAND by using the following code:
 ```
 make full-up
 ```
 
+### 🎉 DONE! 🎉
 <p align="center">
   <img src="https://github.com/eldios/nomad-on-docker/blob/main/assets/functional_happy_cluster.png?raw=true" alt="Picture of an functional Nomad on Docker with an happy icon"/>
 </p>

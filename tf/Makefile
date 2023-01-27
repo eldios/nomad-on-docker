@@ -21,7 +21,8 @@ tf-up:
 	NOMAD_ADDR=${NOMAD_ADDR} terraform apply -auto-approve
 
 tf-down:
-	cd ${TF_DIR} && NOMAD_ADDR=${NOMAD_ADDR} terraform destroy -auto-approve
+	cd ${TF_DIR} && terraform init && \
+	NOMAD_ADDR=${NOMAD_ADDR} terraform destroy -auto-approve
 
 # utility targets
 
